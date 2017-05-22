@@ -2,6 +2,8 @@ const Discord = require("discord.js");
 const client = new Discord.Client();
 const PREFIX = "><"
 
+var servers = {};
+
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.username}!`);
 });
@@ -9,15 +11,19 @@ client.on('ready', () => {
 client.on('message', message => {
   if (!message.content.startsWith(PREFIX)) return;
 
-var userChoice = prompt("Do you choose rock, paper or scissors?");
-  var computerChoice = Math.random();
-    if (computerChoice < 0.34) {
-	      computerChoice = "rock";
-}   else if(computerChoice <= 0.67) {
-	      computerChoice = "paper";
-}   else {
-	      computerChoice = "scissors";
-} console.log("Computer: " + computerChoice);
+  var args = message.content.substring(PREFIX.length).split(" ");
+
+  switch (args[0].toLowerCase()) {
+    case "SPS"
+      var userChoice = sendMessage("Do you choose rock, paper or scissors?");
+        var computerChoice = Math.random();
+          if (computerChoice < 0.34) {
+	         computerChoice = "rock";
+}         else if(computerChoice <= 0.67) {
+	         computerChoice = "paper";
+}         else {
+	         computerChoice = "scissors";
+}         console.log("Computer: " + computerChoice);
 
 var compare = function(userChoice, computerChoice) {
   if(choice1 === choice2) {
@@ -49,5 +55,5 @@ var compare = function(userChoice, computerChoice) {
     }
   }
 }
-
+};
 client.login('MzE1ODc3OTMxMjMyNjU3NDA4.DASVlA.0ADGjMuEV-dQ4hKxdu-q-dg-4SU');
