@@ -13,45 +13,52 @@ client.on('message', message => {
 
   var args = message.content.substring(PREFIX.length).split(" ");
 
+// case "stone, scissors, paper" alternativ commando
+
   switch (args[0].toLowerCase()) {
     case "SPS"
-      var userChoice = sendMessage("Do you choose rock, paper or scissors?");
-        var computerChoice = Math.random();
-          if (computerChoice < 0.34) {
-	         computerChoice = "rock";
-}         else if(computerChoice <= 0.67) {
-	         computerChoice = "paper";
+      var choice1 = sendMessage("Do you choose rock, paper or scissors?"); {
+        if (msg.content === "paper", "stone", "scissors")
+      }
+        var choice2 = Math.random();
+          if (choice2 < 0.34) {
+	         choice2 = "rock";
+}         else if(choice2 <= 0.67) {
+	         choice2 = "paper";
 }         else {
-	         computerChoice = "scissors";
+	         choice2 = "scissors";
 }         console.log("Computer: " + computerChoice);
 
-var compare = function(userChoice, computerChoice) {
+//choice1 = userChice
+//choice2 = computerChoice
+
+var compare = function(choice1, choice2) {
   if(choice1 === choice2) {
-    return "The result is a tie!";
+    sendMessage("The result is a tie!");
   }
 
   else if(choice1 === "rock") {
     if(choice2 === "scissors") {
-      return "Rock Wins";
+      sendMessage("Rock Wins");
     }
     else {
-      return "Paper Wins";
+      sendMessage("Paper Wins");
     }
   }
   if(choice1 === "paper") {
     if(choice2 === "rock") {
-      return "Paper Wins";
+      sendMessage("Paper Wins");
     }
     else {
-      return "Scissors Wins";
+      sendMessage("Scissors Wins");
     }
   }
   else(choice1 === "scissors"); {
     if(choice2 === "paper") {
-      return "Scissors Wins";
+      sendMessage("Scissors Wins");
     }
     else {
-      return "Rock Wins";
+      sendMessage("Rock Wins");
     }
   }
 }
